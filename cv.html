@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil Profesional & Extensión de CV</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .card-surface {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+    .dark .card-surface {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #334155;
+      box-shadow: 0 4px 10px -1px rgba(0, 0, 0, 0.4);
+    }
+    .item-card {
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .item-card:hover {
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen antialiased selection:bg-indigo-500 selection:text-white transition-colors duration-300">
+
+  <header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-indigo-600 text-white font-black flex items-center justify-center text-sm shadow-sm">
+          CV
+        </span>
+        <span class="font-bold text-slate-900 dark:text-white tracking-tight">Extensión Curricular</span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none transition-colors" title="Cambiar tema">
+          <i data-lucide="moon" class="w-4 h-4 dark:hidden"></i>
+          <i data-lucide="sun" class="w-4 h-4 hidden dark:inline"></i>
+        </button>
+        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+          Imprimir / Guardar PDF
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <div class="card-surface p-6 sm:p-8 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Búsqueda activa: Pasantía / Trainee / Junior
+        </div>
+        <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          Estudiante de Ingeniería en Informática
+        </h1>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 font-medium">
+          Universidad Blas Pascal (Córdoba, Argentina) · Desarrollo de Software · Soporte e IA Aplicada
+        </p>
+      </div>
+
+      <div class="flex flex-wrap sm:flex-nowrap gap-3">
+        <a href="mailto:tuemail@ejemplo.com" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs shadow-sm transition-all">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          Contacto
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-black text-white dark:bg-slate-800 dark:hover:bg-slate-700 font-medium text-xs shadow-sm transition-all">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          GitHub
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-medium text-xs shadow-sm transition-all">
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <!-- PRIMER DIV: TÍTULO Y TEXTO DE LO QUE BUSCO / PRETENSIONES -->
+    <section class="card-surface p-6 sm:p-8 rounded-2xl space-y-4">
+      <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
+        <i data-lucide="compass" class="w-5 h-5"></i>
+        <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+          Objetivo Profesional & Pretensiones de Trabajo
+        </h2>
+      </div>
+
+      <div class="space-y-4 text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+        <p>
+          Mi objetivo primordial es incorporarme a un equipo de trabajo como <strong>Pasante, Desarrollador Trainee / Junior</strong> o en roles vinculados a <strong>Soporte Técnico Especializado</strong> y <strong>Análisis de Sistemas</strong>. Busco un entorno profesional donde pueda volcar mis bases en ingeniería de software, programación orientada a objetos, bases de datos relacionales e inteligencia artificial aplicada (visión artificial), aportando compromiso, rigor técnico y entusiasmo.
+        </p>
+        <p>
+          En cuanto a mis pretensiones laborales, priorizo oportunidades que ofrezcan mentoría, buenas prácticas de desarrollo (Scrum, control de versiones, documentación) y desafíos que me permitan seguir potenciando mi carrera. Cuento con disponibilidad horaria flexible para compatibilizar con mis estudios avanzados de ingeniería y total disposición para trabajar de forma presencial en Córdoba, híbrida o remota.
+        </p>
+      </div>
+    </section>
+
+    <!-- SEGUNDO DIV: DIVIDIDO EN 3 DIVS INTERIORES (CONOCIMIENTOS, HERRAMIENTAS, HABILIDADES) -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- DIV 1: CONOCIMIENTOS -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between space-y-5">
+        <div>
+          <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800">
+            <i data-lucide="code-2" class="w-5 h-5"></i>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Conocimientos</h3>
+          </div>
+
+          <div class="space-y-3.5">
+            <!-- C# -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">C# (.NET)</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Desarrollo de lógica de negocio orientada a objetos (POO), colecciones, algoritmos y conectividad básica con datos.</p>
+            </div>
+
+            <!-- SQL & Bases de Datos -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">SQL & MySQL</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Modelado relacional (DER), normalización, sentencias DDL/DML, consultas con JOINs e integridad referencial.</p>
+            </div>
+
+            <!-- IA / YOLOv8 -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">IA & YOLOv8</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Curación y anotación de datasets, entrenamiento/fine-tuning y armado de servicios backend para análisis e inferencia de imágenes.</p>
+            </div>
+
+            <!-- PHP & Web -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">PHP / HTML5 / CSS</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Creación de sitios web dinámicos, consumo e intercambio de datos, procesamiento de formularios y diseño responsivo.</p>
+            </div>
+
+            <!-- C++ -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">C++ & Embebidos</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Nivel Inicial-Medio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Fundamentos algorítmicos, estructuras de control y programación aplicada a microcontroladores y sensores.</p>
+            </div>
+
+            <!-- GDScript -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">GDScript</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Nivel Inicial</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Scripteo de mecánicas de juego, manejo de nodos, señales y ciclos de eventos en Godot Engine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV 2: HERRAMIENTAS Y ENTORNOS -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between space-y-5">
+        <div>
+          <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800">
+            <i data-lucide="wrench" class="w-5 h-5"></i>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Herramientas</h3>
+          </div>
+
+          <div class="space-y-3.5">
+            <!-- Git / GitHub -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Git & GitHub</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Manejo de repositorios, ramas (branches), commits atómicos, pull requests y sincronización de código colaborativo.</p>
+            </div>
+
+            <!-- IDEs -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Visual Studio & VS Code</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Uso Diario / Alto</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Entorno principal de desarrollo, depuración paso a paso (debugging), configuración de extensiones y compilación.</p>
+            </div>
+
+            <!-- Postman -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Postman</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Testing y validación de endpoints HTTP/REST, análisis de payloads JSON y verificación de respuestas de APIs.</p>
+            </div>
+
+            <!-- XAMPP & phpMyAdmin -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">XAMPP & phpMyAdmin</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Uso Frecuente</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Despliegue local de servidores Apache, administración visual de esquemas relacionales, tablas e importación/exportación de datos.</p>
+            </div>
+
+            <!-- Herramientas de IA -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Herramientas de IA & Copilot</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">Uso Productivo</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Asistencia inteligente para refactorización, depuración rápida, generación de pruebas unitarias y agilización de documentación.</p>
+            </div>
+
+            <!-- Hardware & Simulación -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Arduino, Proteus & MPLAB</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Nivel Inicial-Medio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Diseño y simulación de circuitos electrónicos, testeo de placas y programación de microcontroladores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DIV 3: HABILIDADES (METODOLOGÍAS Y SOFT SKILLS) -->
+      <div class="card-surface p-6 rounded-2xl flex flex-col justify-between space-y-5">
+        <div>
+          <div class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 mb-4 pb-2 border-b border-slate-200 dark:border-slate-800">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Habilidades</h3>
+          </div>
+
+          <div class="space-y-3.5">
+            <!-- Scrum -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Scrum & Métodos Ágiles</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Conocimiento Práctico</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Comprensión de ciclos iterativos (sprints), estimaciones, dailies, retrospectivas y enfoque de entrega continua.</p>
+            </div>
+
+            <!-- Diagramas UML -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Diagramas de Casos de Uso (UML)</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Nivel Intermedio</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Capacidad para relevar requisitos funcionales, modelar interacciones actor-sistema y flujos de procesos antes de codificar.</p>
+            </div>
+
+            <!-- Documentación Técnica -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Documentación Técnica Formal</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Habilidad Clave</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Redacción clara de informes de avance, especificaciones de arquitectura, manuales y contratos de interfaz/APIs.</p>
+            </div>
+
+            <!-- Aprendizaje Ágil -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Aprendizaje Rápido & Autodidacta</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">Diferencial</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Habilidad para estudiar documentación oficial, incorporar librerías desconocidas y acoplarse con soltura al stack del proyecto.</p>
+            </div>
+
+            <!-- Resiliencia y Resolución de Problemas -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Resiliencia & Troubleshooting</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Habilidad Clave</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Paciencia y metodología estructurada al depurar errores, aislar fallas de hardware/software y tolerar la frustración.</p>
+            </div>
+
+            <!-- Trabajo en Equipo -->
+            <div class="item-card p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Trabajo en Equipo & Empatía</span>
+                <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">Habilidad Clave</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">Comunicación asertiva, escucha activa de feedback técnico y predisposición a colaborar en tareas de soporte o comunidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-3">
+    <p>© 2026 · Extensión de Currículum Vitae</p>
+    <p>Optimizado para despliegue estático directo en Vercel</p>
+  </footer>
+
+  <script>
+    // Inicializar iconos de Lucide
+    lucide.createIcons();
+
+    // Toggle de tema claro / oscuro con persistencia local
+    const themeBtn = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+
+    themeBtn.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      if (root.classList.contains('dark')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
